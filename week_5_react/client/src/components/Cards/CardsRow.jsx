@@ -10,8 +10,13 @@ const CARDS_ROW_API = "http://localhost:8000/cards";
 
 const CardsRow = () => {
     const [cards, setCards] = useState([]);
+    
     const setCardsFunc = () =>  {
-            axios.get(CARDS_ROW_API).then(res => {
+        const headers = {
+            "Authorization": `Bearer ${localStorage.getItem('jwtToken')}`
+        }
+
+        axios.get(CARDS_ROW_API, {headers:headers}).then(res => {
             setCards(res.data)
         });
     }
@@ -20,6 +25,8 @@ const CardsRow = () => {
         setCardsFunc();
     }, []);
 
+    console.log("jwtToken: ")
+    console.log(localStorage.getItem('jwtToken'))
 
     return (
         <div className="container">

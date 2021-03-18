@@ -1,7 +1,9 @@
 import React from 'react'
 import classes from "./Navbar.module.css";
+import { useHistory } from 'react-router-dom';
 
 function Navbar() {
+    const history = useHistory();
     const nav_link_style = {
         color: "white",
     }
@@ -17,13 +19,16 @@ function Navbar() {
                 <div className="collapse navbar-collapse mr-auto justify-content-end" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#" style={nav_link_style}>All cards<span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="/" style={nav_link_style}>All cards<span className="sr-only">(current)</span></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#" style={nav_link_style}>Login</a>
+                        <a className="nav-link" href="/login" style={nav_link_style}>Login</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#" style={nav_link_style}>Register</a>
+                        <a className="nav-link" href="/register" style={nav_link_style}>Register</a>
+                    </li>
+                    <li className="nav-item">
+                        <button type="button" className="btn" style={nav_link_style}  onClick={e => { e.preventDefault(); {localStorage.removeItem('jwtToken'); history.push("")}}}>Logout</button>
                     </li>
                     </ul>
                 </div>

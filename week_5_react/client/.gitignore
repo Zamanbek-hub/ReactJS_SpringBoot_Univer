@@ -1,13 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/week1_react/magazine/node_modules
-/week2_react/newsapp/node_modules
-/week2_react/newsapp/node_modules
-/week2_react/node_modules
-/week3_react/node_modules
-/week3_react/web/node_modules
-/week5_react/client/node_modules
+/node_modules
 /.pnp
 .pnp.js
 
