@@ -42,13 +42,11 @@ public class CardController {
 
     @PostMapping("/edit_card")
     public void editCard(@RequestBody Card editCard) {
-        System.out.println("edit_catd = " + editCard);
         cardRepository.save(editCard);
     }
 
     @PostMapping("/remove_card")
     public void removeCard(@RequestBody Map<String, String> payload) {
-        System.out.println("payload =" + payload.get("card_id"));
         Long card_id = Long.parseLong(payload.get("card_id"));
         cardTaskRepository.removeAllByCardId(card_id);
         cardRepository.removeById(card_id);
@@ -62,16 +60,12 @@ public class CardController {
 
     @PostMapping("/add_card_task")
     public CardTask addCardTask(@RequestParam("card_id") Long card_id, @RequestBody CardTask newCardTask) {
-        System.out.println("card_id = " + card_id);
-        System.out.println(newCardTask);
         newCardTask.setCard(cardRepository.findById(card_id).get());
         return cardTaskRepository.save(newCardTask);
     }
 
     @PostMapping("/change_card_task_done_state")
     public CardTask changeCardTaskDoneState(@RequestBody Map<String, String> payload) {
-        System.out.println("payload =" + payload.get("id"));
-        System.out.println("done =" + Boolean.parseBoolean(payload.get("done")));
         CardTask editCardTask = cardTaskRepository.findById(Long.parseLong(payload.get("id"))).get();
         editCardTask.setDone(Boolean.parseBoolean(payload.get("done")));
 

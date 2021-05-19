@@ -62,7 +62,11 @@ function CardHeader({props, setCardFunc}) {
     }
 
     const removeCard = event => {
-        axios.post(CARD_REMOVE_API_BY_ID, {card_id: event.target[0].value})
+        const headers = {
+            "Authorization": `Bearer ${localStorage.getItem('jwtToken')}`
+        }
+
+        axios.post(CARD_REMOVE_API_BY_ID, {card_id: event.target[0].value}, {headers:headers})
           .then(res => {
             document.getElementById("deleteModalClose").click()
             history.push("");

@@ -1,0 +1,29 @@
+.my_task_info_card{
+    border-bottom: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 500px;
+    height: 250px;
+}
+
+.my_task_title_div{
+    margin-top: 10px;
+    height: 230px;
+    border-right: 2px solid grey;
+}
+
+.my_task_title_inner_div{
+    margin-top: 70px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.my_task_title{
+    height: 100%;
+}
+
+.my_task_description_inner_div{
+    margin-top: 10px;
+    height: 115px;
+    font-size: 12px;
+}

@@ -3,10 +3,12 @@ package week_5_react.jwtauth.backend.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
 import week_5_react.jwtauth.backend.entities.Users;
 import week_5_react.jwtauth.backend.repositories.UserRepository;
 import week_5_react.jwtauth.backend.services.UserService;
-import org.springframework.stereotype.Service;
+
 
 @Service
 public class UserServiceImpl implements UserService {

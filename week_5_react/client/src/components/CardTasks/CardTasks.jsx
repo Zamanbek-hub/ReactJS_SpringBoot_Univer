@@ -15,7 +15,11 @@ function CardTasks() {
 
     const [card, setCard] = useState({});
     const setCardFunc = () => {
-        axios.get(CARD_GET_API_BY_ID+`?${match.params.id}`).then(res => {
+        const headers = {
+            "Authorization": `Bearer ${localStorage.getItem('jwtToken')}`
+        }
+
+        axios.get(CARD_GET_API_BY_ID+`?${match.params.id}`, {headers: headers}).then(res => {
             setCard(res.data)
         });
     }
@@ -40,6 +44,8 @@ function CardTasks() {
         setCardTasksFunc()
     }, []);
 
+    console.log('card =');
+    console.log(card)
     return (
         <div className="container">
             <CardHeader props={card} setCardFunc={setCardFunc}/>

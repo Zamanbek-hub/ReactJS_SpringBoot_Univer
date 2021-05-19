@@ -1,0 +1,15 @@
+img{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.role_text{
+    width: 100%;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #D5D5D5;
+}
+
+.my_quest{
+    cursor: pointer;
+}
